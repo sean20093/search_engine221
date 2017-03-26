@@ -1,0 +1,298 @@
+
+:root{
+    --color-ink: #062f4f;
+    --color-posy: #813772;
+    --color-embers: #b82601;
+    --c1: rgb(66,133,244);
+    --c2: rgb(234,67,53);
+    --c3: rgb(251,188,5);
+    --c4: rgb(66,133,244);
+    --c5: rgb(52,168,83);
+    --c6: rgb(234,67,53);
+}
+
+nav {background-color: rgba(255, 255, 255, 0);}
+
+#navtabs {font-size: 15pt;}
+#navtabs a {color: var(--color-ink);}
+#navtabs i {color: var(--color-posy);}
+#navtabs > li > a:hover {color: var(--color-posy); background-color: rgba(6, 47, 79, 0.1);}
+#navtabs .dropdown-menu {
+    min-width: 105px;
+    border: none;
+}
+#navtabs .dropdown-menu > li > a:hover,
+#navtabs.dropdown-menu > li > a:focus {
+  color: var(--color-posy);
+  background-color: rgba(6, 47, 79, 0.1);
+}
+
+nav .navbar-brand{font-size: 30pt;}
+nav .navbar-brand .c1{color: var(--c1)}
+nav .navbar-brand .c2{color: var(--c2)}
+nav .navbar-brand .c3{color: var(--c3)}
+nav .navbar-brand .c4{color: var(--c4)}
+nav .navbar-brand .c5{color: var(--c5)}
+nav .navbar-brand .c6{color: var(--c6)}
+
+/*
+.gradient1 {
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #23966c), color-stop(0.25, #faaa54), color-stop(0.5, #e23b4a), color-stop(0.75, #db0768), color-stop(1, #360670));
+    background-image: gradient( linear, left top, right top, color-stop(0, #23966c), color-stop(0.25, #faaa54), color-stop(0.5, #e23b4a), color-stop(0.75, #db0768), color-stop(1, #360670));
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+*/
+
+main {margin-top: 8%; }
+
+main .row:last-child {margin-top: 20px;}
+
+/* search bar
+-------------------------------------------------- */
+
+.search-form {
+    margin-top: 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 40px;
+    border-radius: 40px;
+/*    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);*/
+    box-shadow: 2px 4px 15px 1px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.search-form.focus {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+.search-form ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(6, 47, 79, 0.3);;
+}
+
+.search-input {
+    position: absolute;
+    top: 10px;
+    left: 38px;
+    font-size: 14px;
+    /*  clearable icon  */
+    background: #fff url(http://i.stack.imgur.com/mJotv.gif) no-repeat right -10px center;
+    transition: background 0.4s;
+    
+    color: var(--color-ink);
+    width: 265px;
+    height: 20px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.search-input.x  { background-position: right 5px center; } /* (jQ) Show clearable icon */
+.search-input.onX{ cursor: pointer; }              /* (jQ) hover cursor style */
+.search-input::-ms-clear {display: none; width:0; height:0;} /* Remove IE default*/
+
+.search-icon {
+    position: absolute;
+    text-align: left;
+    top: 10px;
+    left: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none !important;
+    cursor: default;
+}
+
+.search-icon i{
+    color: var(--color-posy);
+    opacity: 0.5;
+}
+
+.search-button {
+    position: absolute;
+    text-align: right;
+    top: 10px;
+    right: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none !important;
+    cursor: pointer;
+}
+
+#search-button-div span {
+    position: absolute;
+    text-align: right;
+    right: -53px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    opacity: 0;
+    background: #ffffff;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 4px 7px;
+    border-radius: 12px;
+    top: 0px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+#search-button-div span::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-top: 4px solid var(--color-posy);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+#search-button-div:hover span {
+    opacity: 1;
+    top: -12px;
+}
+#search-button-div svg {
+    height: 20px;
+    width: 20px;
+    opacity: 0.3;
+    fill: var(--color-ink);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    pointer-events: none;
+}
+#search-button-div:hover svg {
+    fill: var(--color-posy);
+    opacity: 1;
+}
+#search-button-div:hover span {
+    background: var(--color-posy);
+}
+#search-button-div:hover span::after {
+    border-top-color: var(--color-posy);
+}
+
+/* test
+-------------------------------------------------- */
+/*
+.aaa {
+    width: 30px;
+    height: 30px;
+    padding-top: 0%;
+    position: relative;
+}
+
+.aaa svg {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+*/
+
+#test:hover {color: deepskyblue}
+#test:hover svg {fill: deepskyblue}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 400px;
+  background-color: rgba(0,0,0,0);
+  border-radius: 25px;;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    position: 286da8;
+	top: 8%;
+}
+.carousel-caption.slide1 {
+    color: #cd5360;
+    text-shadow: none;
+}
+.carousel-caption.slide2 {
+    color: var(--c3);
+    text-shadow: none;
+}
+.carousel-caption.slide3 {
+    color: #f5f5f5;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+}
+/*  Make round corner of slides in carousel */
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 400px;
+  border-radius: 25px;
+}
+
+.carousel-control {
+    border-radius: 25px;
+}
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .0001) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .0001) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .2)), to(rgba(0, 0, 0, .0001)));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .0001) 100%);
+}
+.carousel-control.right {
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .2) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .2) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .2)));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .1) 100%);
+}
+
+/* FOOTER
+-------------------------------------------------- */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+    background-color: rgba(6, 47, 79, 0.3);
+}
+
+.footer .copyright:hover {color: var(--color-posy);}
+
+.footer .contacticon {color: #fff;}
+
+.footer .contacticon:hover {color: var(--color-posy);}
+
+
+
+
+
